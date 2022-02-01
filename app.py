@@ -53,7 +53,7 @@ def index():
             list_all_token.extend(difference_1)
         return s
 
-app.run(host='0.0.0.0', port=81)
+app.run(host='0.0.0.0', port=80)
 
 
 
