@@ -34,7 +34,7 @@ app = Flask(__name__)
 
 
 account_sid = 'AC62b5f1f188b3dfe453b9acb713cf9e7a' 
-auth_token = 'e4b27bf0cba4b64f9d40d2bfbdb07b95'
+auth_token = ''
 client = Client(account_sid, auth_token) 
 
 # message = client.messages.create(  
