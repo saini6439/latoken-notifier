@@ -33,9 +33,9 @@ list_all_token = ["ORE/USDT","OCB/ETH","KEY/USDT","NAUSICAA/USDT","NKN/BTC","AMP
 app = Flask(__name__)
 
 
-account_sid = 'AC62b5f1f188b3dfe453b9acb713cf9e7a' 
-#auth_token = 'e4b27bf0cba4b64f9d40d2bfbdb07b95'
-client = Client(account_sid, auth_token) 
+# account_sid = 'AC62b5f1f188b3dfe453b9acb713cf9e7a' 
+# auth_token = 'e4b27bf0cba4b64f9d40d2bfbdb07b95'
+# client = Client(account_sid, auth_token) 
 
 # message = client.messages.create(  
 #                               messaging_service_sid='MG713f5f6da16e99dce6f6599597082733', 
@@ -46,43 +46,55 @@ client = Client(account_sid, auth_token)
 # print(message.sid)
 
 #print(json_response)
-
-
 while True:
-    try:
-        index = -1
-        json_response_new = get_token()
-        json_response_new_len = len(json_response_new)
-        list_o_new = []
-        s = ","
-        
-        for j in json_response_new:
-            if j['lastPrice']!="0":
-                list_o_new.append(j['symbol'])
-            # diff = list(set(json_response_new) - set(json_response))
-            # print(diff)
-            # index=index+1
-            # #print(index)
-            # if i['status']=="CURRENCY_STATUS_ACTIVE" and i['tag']=="AG10":
-            #     print(i)
-            #     print(i['tag'])
-        difference_1 = list(set(list_o_new).difference(set(list_all_token)))
-        s = s.join(difference_1)+"new token is: "+str(len(difference_1))
-        if len(difference_1)>=1:
-            message = client.api.account.messages.create(  
-                                messaging_service_sid='MG78d527f0a5e19ef93a15178c3942f41d', 
-                                body=s,      
-                                to='+919785466389' 
-                            )
-            # print(message)
-            print("diffrence",s,len(difference_1),len(json_response_new))
-            list_all_token.extend(difference_1)
-        else:
-            print("len is 0")
-    except:
-        print("some error occure")
-        #print(json_length,json_response_new_len)
-    time.sleep(120)
+    index = -1
+    json_response_new = get_token()
+    #print("json_response_new",json_response_new)
+    json_response_new_len = len(json_response_new)
+    list_o_new = []
+    list_o_new_notricker = []
+    s = ","
+    s1 = ","
+    
 
+    for j in json_response_new:
+        list_o_new_notricker.append(j['symbol'])
+        if j['lastPrice']!="0":
+            list_o_new.append(j['symbol'])
+        # diff = list(set(json_response_new) - set(json_response))
+        # print(diff)
+        # index=index+1
+        # #print(index)
+        # if i['status']=="CURRENCY_STATUS_ACTIVE" and i['tag']=="AG10":
+        #     print(i)
+        #     print(i['tag'])
+    difference_1 = list(set(list_o_new).difference(set(list_all_token)))
+    difference_2 = list(set(list_o_new_notricker).difference(set(list_all_token)))
+    s = s.join(difference_1)+"new token is: "+str(len(difference_1))
+    s1 = s1.join(difference_2)+"new token is: "+str(len(difference_2))
+    if len(difference_1)>=1:
+        # message = client.api.account.messages.create(  
+        #                       messaging_service_sid='MG78d527f0a5e19ef93a15178c3942f41d', 
+        #                       body=s,      
+        #                       to='+919785466389' 
+        #                   )
+        # print(message)
+        print("diffrence",s,len(difference_1),len(json_response_new))
+        list_all_token.extend(difference_1)
+    else:
+        print("len is 0")
+    if len(difference_2)>=1:
+        # message = client.api.account.messages.create(  
+        #                       messaging_service_sid='MG78d527f0a5e19ef93a15178c3942f41d', 
+        #                       body=s,      
+        #                       to='+919785466389' 
+        #                   )
+        # print(message)
+        print("diffrence",s,len(difference_2),len(json_response_new))
+        #list_all_token.extend(difference_1)
+    else:
+        print("len is 0")
+    #print(json_length,json_response_new_len)
+    time.sleep(120)
 
 
