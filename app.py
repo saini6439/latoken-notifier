@@ -22,11 +22,6 @@ list_all_token_vishnu = ["ORE/USDT","OCB/ETH","KEY/USDT","NAUSICAA/USDT","NKN/BT
 app = Flask(__name__)
 
 
-# account_sid = 'AC62b5f1f188b3dfe453b9acb713cf9e7a' 
-# auth_token = 'e4b27bf0cba4b64f9d40d2bfbdb07b95'
-# client = Client(account_sid, auth_token) 
-
-
 @app.route('/')
 def index():
         index = -1
@@ -37,22 +32,9 @@ def index():
         for j in json_response_new:
             if j['lastPrice']!="0":
                 list_o_new.append(j['symbol'])
-            # diff = list(set(json_response_new) - set(json_response))
-            # print(diff)
-            # index=index+1
-            # #print(index)
-            # if i['status']=="CURRENCY_STATUS_ACTIVE" and i['tag']=="AG10":
-            #     print(i)
-            #     print(i['tag'])
         difference_1 = list(set(list_o_new).difference(set(list_all_token)))
         s = s.join(difference_1)+" new token is: "+str(len(difference_1))
         if len(difference_1)>=1:
-            # message = client.api.account.messages.create(  
-            #                       messaging_service_sid='MG78d527f0a5e19ef93a15178c3942f41d', 
-            #                       body=s,      
-            #                       to='+919785466389' 
-            #                   )
-            # print(message)
             print("diffrence",s,len(difference_1),len(json_response_new))
             list_all_token.extend(difference_1)
         return s
@@ -67,22 +49,9 @@ def index_mukesh():
         for j in json_response_new:
             if j['lastPrice']!="0":
                 list_o_new.append(j['symbol'])
-            # diff = list(set(json_response_new) - set(json_response))
-            # print(diff)
-            # index=index+1
-            # #print(index)
-            # if i['status']=="CURRENCY_STATUS_ACTIVE" and i['tag']=="AG10":
-            #     print(i)
-            #     print(i['tag'])
         difference_1 = list(set(list_o_new).difference(set(list_all_token_mukesh)))
         s = s.join(difference_1)+" new token is: "+str(len(difference_1))
         if len(difference_1)>=1:
-            # message = client.api.account.messages.create(  
-            #                       messaging_service_sid='MG78d527f0a5e19ef93a15178c3942f41d', 
-            #                       body=s,      
-            #                       to='+919785466389' 
-            #                   )
-            # print(message)
             print("diffrence",s,len(difference_1),len(json_response_new))
             list_all_token_mukesh.extend(difference_1)
         return s
@@ -97,27 +66,14 @@ def index_vishnu():
         for j in json_response_new:
             if j['lastPrice']!="0":
                 list_o_new.append(j['symbol'])
-            # diff = list(set(json_response_new) - set(json_response))
-            # print(diff)
-            # index=index+1
-            # #print(index)
-            # if i['status']=="CURRENCY_STATUS_ACTIVE" and i['tag']=="AG10":
-            #     print(i)
-            #     print(i['tag'])
         difference_1 = list(set(list_o_new).difference(set(list_all_token_vishnu)))
         s = s.join(difference_1)+" new token is: "+str(len(difference_1))
         if len(difference_1)>=1:
-            # message = client.api.account.messages.create(  
-            #                       messaging_service_sid='MG78d527f0a5e19ef93a15178c3942f41d', 
-            #                       body=s,      
-            #                       to='+919785466389' 
-            #                   )
-            # print(message)
             print("diffrence",s,len(difference_1),len(json_response_new))
             list_all_token_vishnu.extend(difference_1)
         return s
 
-app.run(host='0.0.0.0', port=80)
+app.run(host='0.0.0.0', port=81)
 
 
 

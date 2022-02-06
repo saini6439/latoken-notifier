@@ -6,7 +6,7 @@ from send_sms import send_sms
 from config import settings
 
 apiKey = settings.apiKey
-apiSecret = settings.apiSecret
+apiSecret = str.encode(settings.apiSecret)
 baseUrl = 'https://api.latoken.com'
 endpoint = '/v2/auth/order/place'
 

@@ -22,7 +22,7 @@ while True:
                 
         difference_1 = list(set(list_o_new).difference(set(list_all_token)))
         s = s.join(difference_1)+"new token is: "+str(len(difference_1))
-        print("s",s)
+        #print("s",s)
         if len(difference_1)>=1:
             for j in json_response_new:
                 baseCurrency = j['baseCurrency']
@@ -30,8 +30,8 @@ while True:
                 a_price = float(j['lastPrice'])
                 if j['lastPrice']!="0":
                     if(j['symbol']=="TULIP"+"/USDT") and j['symbol'] in difference_1:
-                        place_order(baseCurrency,quoteCurrency,1.12345699,9) # 10 $
-                        place_order(baseCurrency,quoteCurrency,2.1283699,9.3968) # 20 $
+                        place_order(baseCurrency,quoteCurrency,1.12345699,1) # 10 $
+                        #place_order(baseCurrency,quoteCurrency,2.1283699,9.3968) # 20 $
                         #place_order(baseCurrency,quoteCurrency,3.273728,4.58) # 15$
                         # place_order(baseCurrency,quoteCurrency,5,2) # 10$
                         # place_order(baseCurrency,quoteCurrency,10,0.5) # 5 $
@@ -60,8 +60,6 @@ while True:
         #print("ticker",s,len(difference_1),len(json_response_new))
             send_sms(s)
             list_all_token.extend(difference_1)
-        else:
-            print("len is 0")
     except Exception as e:
         print("some error occure",e)
         #print(json_length,json_response_new_len)
