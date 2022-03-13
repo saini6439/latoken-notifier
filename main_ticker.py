@@ -57,13 +57,18 @@ while True:
                         place_order(baseCurrency,quoteCurrency,0.000003349,5971931) # 20$
                         place_order(baseCurrency,quoteCurrency,0.000001345,14869888)# 20$ 
         # print(message)
+                    if(j['symbol']=="ARYA"+"/USDT") and j['symbol'] in difference_1:
+                        place_order(baseCurrency,quoteCurrency,0.1,50) # 5$
+                        place_order(baseCurrency,quoteCurrency,0.03,250) # 7.5$
+                        place_order(baseCurrency,quoteCurrency,0.01,1000)# 10$
+                        place_order(baseCurrency,quoteCurrency,0.00135748,8000)# 10.85$
         #print("ticker",s,len(difference_1),len(json_response_new))
             send_sms(s)
             list_all_token.extend(difference_1)
     except Exception as e:
         print("some error occure",e)
         #print(json_length,json_response_new_len)
-    time.sleep(40)
+    time.sleep(10)
 
 
 
