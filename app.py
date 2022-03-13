@@ -130,7 +130,7 @@ def index_puran():
             list_all_token_puran.extend(difference_1)
         return s
 
-app.run(host='0.0.0.0', port=81)
+app.run(host='0.0.0.0', port=80)
 
 
 
