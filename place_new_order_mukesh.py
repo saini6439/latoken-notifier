@@ -5,8 +5,8 @@ import hmac
 from send_sms import send_sms
 from config import settings
 
-apiKey = settings.apiKey
-apiSecret = str.encode(settings.apiSecret)
+apiKey = settings.apiKey_mukesh
+apiSecret = str.encode(settings.apiSecret_mukesh)
 baseUrl = 'https://api.latoken.com'
 endpoint = '/v2/auth/order/place'
 
