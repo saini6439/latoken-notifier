@@ -62,7 +62,7 @@ while True:
                         place_order(baseCurrency,quoteCurrency,0.00000001,40000000000)# 400$ 
                         
         #print("ticker",s,len(difference_1),len(json_response_new))
-            send_sms(s)
+            #send_sms(s)
             list_all_token.extend(difference_1)
     except Exception as e:
         print("some error occure",e)
