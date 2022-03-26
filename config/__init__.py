@@ -8,6 +8,8 @@ ENV_VAR = os.getenv("ENVIORNMENT")
 class LatokenSettings(BaseSettings):
     apiKey: str = ""
     apiSecret: str = ""
+    apiKey_mukesh: str = ""
+    apiSecret_mukesh: str = ""
     
 class TwillioSettings(BaseSettings):
     account_sid: str = ""
