@@ -13,7 +13,7 @@ endpoint = '/v2/auth/order/place'
 #https://api.latoken.com/v2/auth/stopOrder/place
 
 def place_order(baseCurrency,quoteCurrency,price,quantity):
-    print(round(price,8))
+    print(round(price,10))
     params = {
             'baseCurrency': baseCurrency,
             'quoteCurrency': quoteCurrency,
@@ -21,7 +21,7 @@ def place_order(baseCurrency,quoteCurrency,price,quantity):
             'condition': 'GOOD_TILL_CANCELLED',
             'type': 'LIMIT',
             'clientOrderId': 'mobile-Android_1.97.02',
-            'price': round(price,8),
+            'price': round(price,10),
             'quantity': quantity,
             'timestamp': int(datetime.datetime.now().timestamp()*1000)
         }

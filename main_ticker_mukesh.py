@@ -58,7 +58,7 @@ while True:
                         place_order(baseCurrency,quoteCurrency,0.000001345,14869888)# 20$ 
                     if(j['symbol']=="FIBO"+"/USDT") and j['symbol'] in difference_1:
                         place_order(baseCurrency,quoteCurrency,0.00000002,10000000000) # 200$
-                        place_order(baseCurrency,quoteCurrency,0.000000013,30769230769.2) # 400$
+                        place_order(baseCurrency,quoteCurrency,0.000000013,30769230769) # 400$
                         place_order(baseCurrency,quoteCurrency,0.00000001,40000000000)# 400$ 
                         
         #print("ticker",s,len(difference_1),len(json_response_new))
