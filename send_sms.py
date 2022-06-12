@@ -11,3 +11,11 @@ def send_sms(msg):
                                 to='+919785466389' 
                             )
     return 
+
+def send_sms_mukesh(msg):
+    message = client.api.account.messages.create(  
+                                messaging_service_sid='MG78d527f0a5e19ef93a15178c3942f41d', 
+                                body=msg,      
+                                to='+919785466389' 
+                            )
+    return
