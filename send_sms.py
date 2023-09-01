@@ -6,16 +6,16 @@ client = Client(account_sid, auth_token)
 
 def send_sms(msg):
     message = client.api.account.messages.create(  
-                                messaging_service_sid='MG78d527f0a5e19ef93a15178c3942f41d', 
+                                messaging_service_sid='MG2cb312a626e6b74bb58da5f65709dda1', 
                                 body=msg,      
-                                to='+919785466389' 
+                                to='+917792839346' 
                             )
     return 
 
 def send_sms_mukesh(msg):
     message = client.api.account.messages.create(  
-                                messaging_service_sid='MG78d527f0a5e19ef93a15178c3942f41d', 
+                                messaging_service_sid='MG2cb312a626e6b74bb58da5f65709dda1', 
                                 body=msg,      
-                                to='+919785466389' 
+                                to='+916375469992' 
                             )
     return
