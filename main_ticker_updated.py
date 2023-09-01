@@ -23,43 +23,43 @@ while True:
         difference_1 = list(set(list_o_new).difference(set(list_all_token)))
         s = s.join(difference_1)+"new token is: "+str(len(difference_1))
         #print("s",s)
-        if len(difference_1)>=1:
-            for j in json_response_new:
-                baseCurrency = j['baseCurrency']
-                quoteCurrency = j['quoteCurrency']
-                a_price = float(j['lastPrice'])
-                if j['lastPrice']!="0":
-                    if(j['symbol']=="TULIP"+"/USDT") and j['symbol'] in difference_1:
-                        place_order(baseCurrency,quoteCurrency,1.12345699,1) # 10 $
-                        #place_order(baseCurrency,quoteCurrency,2.1283699,9.3968) # 20 $
-                        #place_order(baseCurrency,quoteCurrency,3.273728,4.58) # 15$
-                        # place_order(baseCurrency,quoteCurrency,5,2) # 10$
-                        # place_order(baseCurrency,quoteCurrency,10,0.5) # 5 $
-                    if(j['symbol']=="RYLT"+"/USDT") and j['symbol'] in difference_1:
-                        place_order(baseCurrency,quoteCurrency,0.0456798,220) # 10$
-                        place_order(baseCurrency,quoteCurrency,0.0123456,805) # 10$
-                        place_order(baseCurrency,quoteCurrency,0.0055678,2694) # 15$
-                        place_order(baseCurrency,quoteCurrency,0.0022848,6565) # 15 $
-                        place_order(baseCurrency,quoteCurrency,0.0005168,29024) # 15$
-                    if(j['symbol']=="QTCT"+"/USDT") and j['symbol'] in difference_1:
-                        place_order(baseCurrency,quoteCurrency,1.12345699,9) # 10$
-                        place_order(baseCurrency,quoteCurrency,2.1283699,9.3968) # 20$
-                        place_order(baseCurrency,quoteCurrency,3.273728,4.58) # 15$
-                        place_order(baseCurrency,quoteCurrency,5,2) # 10$
-                        place_order(baseCurrency,quoteCurrency,10,0.5) # 5$
-                    if(j['symbol']=="KAIDHT"+"/USDT") and j['symbol'] in difference_1:
-                        place_order(baseCurrency,quoteCurrency,5,1) # 5$
-                        place_order(baseCurrency,quoteCurrency,2.12335454,5) # 10$
-                        place_order(baseCurrency,quoteCurrency,1,20) # 20$
-                        place_order(baseCurrency,quoteCurrency,0.6,25) # 15$
-                    if(j['symbol']=="SHREE"+"/USDT") and j['symbol'] in difference_1:
-                        place_order(baseCurrency,quoteCurrency,0.000012345,810044) # 10$
-                        place_order(baseCurrency,quoteCurrency,0.000003349,5971931) # 20$
-                        place_order(baseCurrency,quoteCurrency,0.000001345,14869888)# 20$
-                    if(j['symbol']=="FIBO"+"/USDT") and j['symbol'] in difference_1:
-                        place_order(baseCurrency,quoteCurrency,0.00000002,500000000) # 10$
-                        place_order(baseCurrency,quoteCurrency,0.000000013,769230769) # 20$
-                        place_order(baseCurrency,quoteCurrency,0.00000001,1500000000)# 20$ 
+        # if len(difference_1)>=1:
+        #     for j in json_response_new:
+        #         baseCurrency = j['baseCurrency']
+        #         quoteCurrency = j['quoteCurrency']
+        #         a_price = float(j['lastPrice'])
+        #         if j['lastPrice']!="0":
+        #             if(j['symbol']=="TULIP"+"/USDT") and j['symbol'] in difference_1:
+        #                 place_order(baseCurrency,quoteCurrency,1.12345699,1) # 10 $
+        #                 #place_order(baseCurrency,quoteCurrency,2.1283699,9.3968) # 20 $
+        #                 #place_order(baseCurrency,quoteCurrency,3.273728,4.58) # 15$
+        #                 # place_order(baseCurrency,quoteCurrency,5,2) # 10$
+        #                 # place_order(baseCurrency,quoteCurrency,10,0.5) # 5 $
+        #             if(j['symbol']=="RYLT"+"/USDT") and j['symbol'] in difference_1:
+        #                 place_order(baseCurrency,quoteCurrency,0.0456798,220) # 10$
+        #                 place_order(baseCurrency,quoteCurrency,0.0123456,805) # 10$
+        #                 place_order(baseCurrency,quoteCurrency,0.0055678,2694) # 15$
+        #                 place_order(baseCurrency,quoteCurrency,0.0022848,6565) # 15 $
+        #                 place_order(baseCurrency,quoteCurrency,0.0005168,29024) # 15$
+        #             if(j['symbol']=="QTCT"+"/USDT") and j['symbol'] in difference_1:
+        #                 place_order(baseCurrency,quoteCurrency,1.12345699,9) # 10$
+        #                 place_order(baseCurrency,quoteCurrency,2.1283699,9.3968) # 20$
+        #                 place_order(baseCurrency,quoteCurrency,3.273728,4.58) # 15$
+        #                 place_order(baseCurrency,quoteCurrency,5,2) # 10$
+        #                 place_order(baseCurrency,quoteCurrency,10,0.5) # 5$
+        #             if(j['symbol']=="KAIDHT"+"/USDT") and j['symbol'] in difference_1:
+        #                 place_order(baseCurrency,quoteCurrency,5,1) # 5$
+        #                 place_order(baseCurrency,quoteCurrency,2.12335454,5) # 10$
+        #                 place_order(baseCurrency,quoteCurrency,1,20) # 20$
+        #                 place_order(baseCurrency,quoteCurrency,0.6,25) # 15$
+        #             if(j['symbol']=="SHREE"+"/USDT") and j['symbol'] in difference_1:
+        #                 place_order(baseCurrency,quoteCurrency,0.000012345,810044) # 10$
+        #                 place_order(baseCurrency,quoteCurrency,0.000003349,5971931) # 20$
+        #                 place_order(baseCurrency,quoteCurrency,0.000001345,14869888)# 20$
+        #             if(j['symbol']=="FIBO"+"/USDT") and j['symbol'] in difference_1:
+        #                 place_order(baseCurrency,quoteCurrency,0.00000002,500000000) # 10$
+        #                 place_order(baseCurrency,quoteCurrency,0.000000013,769230769) # 20$
+        #                 place_order(baseCurrency,quoteCurrency,0.00000001,1500000000)# 20$ 
 
         # print(message)
         #print("ticker",s,len(difference_1),len(json_response_new))
