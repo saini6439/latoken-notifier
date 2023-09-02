@@ -64,9 +64,9 @@ while True:
 
         # print(message)
         #print("ticker",s,len(difference_1),len(json_response_new))
-            list_all_token.extend(difference_1)
-            send_sms(s)
-            send_sms_mukesh(s)
+        list_all_token.extend(difference_1)
+        send_sms(s)
+        send_sms_mukesh(s)
             
     except Exception as e:
         print("some error occure",e)
